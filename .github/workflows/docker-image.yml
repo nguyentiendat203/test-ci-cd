@@ -16,8 +16,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} 
       - name: Build docker image
         run: docker build -t test-cicd-app .
-      - name: Publish image to docker hub
-        run: docker push test-cicd-app:latest
+  
         
   deploy:
     needs: build
